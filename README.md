@@ -6,4 +6,4 @@
     import VerificationCode from 'react-verificationcode-s';
 
     <VerificationCode getNumbers={this.getNumbers.bind(this)} height="40" width="192" />
-```sh
+```
