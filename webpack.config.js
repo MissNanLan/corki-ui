@@ -21,7 +21,7 @@ module.exports = {
         exclude: /node_modules/, 
         loader: 'babel-loader?presets[]=env&presets[]=react' 
       },
-      { 
+      {
         test: /\.css$/, 
         use: ['style-loader','css-loader']
       }
