@@ -1,4 +1,6 @@
 import React,{ Component } from 'react';
+import * as PropTypes from 'prop-types';
+import './index.css';
 class VerificationCode extends React.Component {
   constructor(props) {
     super(props);
@@ -6,8 +8,13 @@ class VerificationCode extends React.Component {
     this.state = {
       id: "myCanvas"
     }
+    this.updateCode = this.updateCode.bind(this);
   }
   componentDidMount() {
+    this.generateCode();
+  };
+
+  generateCode() {
     const { id } = this.state;
     let { height, width } = this.props;
     let canVas = document.getElementById(id);
@@ -50,25 +57,42 @@ class VerificationCode extends React.Component {
       context.fillStyle = this.rc(150,200);
       context.fill();
     }
-    this.props.getNumbers(this.numbers);
-  }
+    if(this.props.getNumbers) {
+      this.props.getNumbers(this.numbers);
+    }
+  };
+
   rc(min, max) {
     let r = this.rn(min, max);
     let g = this.rn(min, max);
     let b = this.rn(min, max);
     return `rgb(${r},${g},${b})`;
   }
+
   rn(min, max) {
     return parseInt(Math.random() * (max - min) + min);
   }
+
+  updateCode() {
+    this.numbers = [];
+    this.generateCode();
+  }
+
   render() {
     const { id } = this.state;
     const { height, width } = this.props;
     return (
-      <div>
-        <canvas id={id} width={width || 192} height={height || 40} />
+      <div className="code-wapper" onClick={this.updateCode}>
+        <canvas id={id} width={width || '192'} height={height || '40'} />
       </div>
     );
   }
 }
+
+VerificationCode.propTypes = {
+  getNumbers: PropTypes.func,
+  width: PropTypes.string,
+  height: PropTypes.string
+};
+
 module.exports = VerificationCode;

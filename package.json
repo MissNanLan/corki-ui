@@ -1,6 +1,6 @@
 {
   "name": "corki-ui",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xuya227939/react-verificationcode.git"
+    "url": "git+https://github.com/xuya227939/corki-ui.git"
   },
   "keywords": [
     "react"
@@ -17,22 +17,25 @@
   "author": "xuya227939",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xuya227939/react-verificationcode/issues"
+    "url": "https://github.com/xuya227939/corki-ui/issues"
   },
-  "homepage": "https://github.com/xuya227939/react-verificationcode#readme",
+  "homepage": "https://github.com/xuya227939/corki-ui#readme",
   "dependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "7.1.4",
     "babel-plugin-import": "^1.8.0",
     "babel-plugin-istanbul": "^5.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "has-flag": "^3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",

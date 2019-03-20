@@ -12,12 +12,51 @@
 | children | 内容 | React.node | 
 
 ```jsx
-  <Modal
-    title="hello"
-    visible={visible}
-    cancel={this.cancel}
-    confirm={this.confirm}
-  >
-    <p>hello</p>
-  </Modal>
+import React,{ Component } from 'react';
+import { Modal } from 'corki-ui';
+class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false
+    }
+  }
+
+  cancel = () => {
+    this.setState({
+      visible: false
+    });
+  };
+
+  confirm = () => {
+    this.setState({
+      visible: false
+    });
+  }
+
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  }
+
+  render() {
+    const { visible } = this.state;
+    return (
+      <div>
+        <button onClick={this.showModal}>Open Modal</button>
+        <Modal
+          title="hello"
+          visible={visible}
+          cancel={this.cancel}
+          confirm={this.confirm}
+        >
+          <p>hello</p>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+export default Index;
 ```
