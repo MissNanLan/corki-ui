@@ -1,9 +1,16 @@
-# react验证码组件
-# Install
-```sh
-    npm i react-verificationcode-s
-  
-    import VerificationCode from 'react-verificationcode-s';
+## Install
 
-    <VerificationCode getNumbers={this.getNumbers.bind(this)} height="40" width="192" />
+```bash
+npm install corki-ui
 ```
+
+## Usage
+
+```jsx
+import { Modal } from 'corki-ui';
+ReactDOM.render(<Modal />, mountNode);
+```
+
+## Links
+
+- [Home page](https://downfuture.com/)
