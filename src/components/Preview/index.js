@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.less';
+import './index.css';
 // 判断游览器
 const USER_AGENT = navigator.userAgent;
 class Preview extends React.Component {
@@ -44,7 +44,7 @@ class Preview extends React.Component {
     document.onmouseup = null;
     document.body.onmousewheel = null;
     document.removeEventListener('DOMMouseScroll', this.onScroll, false); 
-  }
+  };
 
   // 缩小或放大
   onScroll = (e) => {
@@ -140,7 +140,7 @@ class Preview extends React.Component {
   
   render() {
     const { imgStyle, isShowRate, num } = this.state;
-    const { url, isShowPreView = false } = this.props;
+    const { url, isShowPreView = false, onClose } = this.props;
     return (
       <div className="preview">
         {
@@ -162,6 +162,14 @@ class Preview extends React.Component {
                 isShowRate && 
                 <div className="preview-tooltip">{num}%</div>
               }
+              <div className="preview-close" onClick={onClose}>
+                <img
+                  alt="img"
+                  width="32"
+                  height="32"
+                  src="https://img.downfuture.com/corki-ui/close.png"
+                />
+              </div>
             </div>
             <div className="preview-mask" />
           </div>
@@ -173,7 +181,8 @@ class Preview extends React.Component {
 
 Preview.propTypes = {
   url: PropTypes.string,
-  isShowPreView: PropTypes.bool
+  isShowPreView: PropTypes.bool,
+  onClose: PropTypes.func
 };
 
 module.exports = Preview;

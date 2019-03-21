@@ -16,10 +16,21 @@ module.exports = {
 
   module: {
     rules: [
+      // {
+      //   test: /\.js$/, 
+      //   exclude: /node_modules/, 
+      //   loader: 'babel-loader?presets[]=env&presets[]=react' 
+      // },
       {
-        test: /\.js$/, 
-        exclude: /node_modules/, 
-        loader: 'babel-loader?presets[]=env&presets[]=react' 
+        test: /\.js|jsx$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'es2015', 'babel-preset-env', 'stage-3'],
+            plugins: [["transform-class-properties"]]
+          }
+        }
       },
       {
         test: /\.css$/, 

@@ -43,6 +43,14 @@
     cursor: grab;
 }
 
+.preview-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 24px;
+    cursor: pointer;
+}
+
 .preview-mask {
     position: fixed;
     top: 0;
