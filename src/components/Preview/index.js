@@ -101,7 +101,6 @@ class Preview extends React.Component {
     this.isDown = true;
     this.currentX = e.clientX;
     this.currentY = e.clientY;
-    console.log(previewImg[0].offsetLeft);
     this.offsetLeft = parseInt(previewImg[0].offsetLeft);
     this.offsetTop = parseInt(previewImg[0].offsetTop);
     this.handlerImgMove();
@@ -121,7 +120,6 @@ class Preview extends React.Component {
         let style = {};
         style.width = imgStyle.width + 'px';
         style.height = imgStyle.height + 'px';
-        console.log(e.clientX - (this.currentX - this.offsetLeft));
         style.left = e.clientX - (this.currentX - this.offsetLeft) + 'px';
         style.top = e.clientY - (this.currentY - this.offsetTop) + 'px';
         style.position = 'relative';
@@ -140,40 +138,35 @@ class Preview extends React.Component {
   
   render() {
     const { imgStyle, isShowRate, num } = this.state;
-    const { url, isShowPreView = false, onClose } = this.props;
+    const { url, onClose } = this.props;
     return (
       <div className="preview">
-        {
-          isShowPreView &&
-          <div>
-            <div className="preview-content">
-              <div className="preview-img">
-                <img
-                  draggable="false"
-                  alt="img"
-                  className="img select-cursor"
-                  onMouseDown={this.handlerImgDown}
-                  src={url}
-                  onLoad={this.onload}
-                  style={imgStyle}
-                />
-              </div>
-              {
-                isShowRate && 
-                <div className="preview-tooltip">{num}%</div>
-              }
-              <div className="preview-close" onClick={onClose}>
-                <img
-                  alt="img"
-                  width="32"
-                  height="32"
-                  src="https://img.downfuture.com/corki-ui/close.png"
-                />
-              </div>
-            </div>
-            <div className="preview-mask" />
+        <div className="preview-content">
+          <div className="preview-img">
+            <img
+              draggable="false"
+              alt="img"
+              className="img select-cursor"
+              onMouseDown={this.handlerImgDown}
+              src={url}
+              onLoad={this.onload}
+              style={imgStyle}
+            />
           </div>
-        }
+          {
+            isShowRate && 
+            <div className="preview-tooltip">{num}%</div>
+          }
+          <div className="preview-close" onClick={onClose}>
+            <img
+              alt="img"
+              width="32"
+              height="32"
+              src="https://img.downfuture.com/corki-ui/close.png"
+            />
+          </div>
+        </div>
+        <div className="preview-mask" />
       </div>
     );
   }
@@ -181,7 +174,6 @@ class Preview extends React.Component {
 
 Preview.propTypes = {
   url: PropTypes.string,
-  isShowPreView: PropTypes.bool,
   onClose: PropTypes.func
 };
 

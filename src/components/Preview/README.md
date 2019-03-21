@@ -4,7 +4,6 @@
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | url | 图片链接，必须是在网络上能够打开 | string |  |
-| isShowPreView | 是否显示 | bool | false |
 | onClose | 关闭方法 | func | |
 
 ```jsx
@@ -35,11 +34,13 @@ class Index extends Component {
     return (
       <div>
         <button onClick={this.showPreview}>preview</button>
-        <Preview
-          url="https://img.downfuture.com/13026877921/9y-PLogxmyJudmV23z9HgbPX.jpeg"
-          isShowPreView={isShowPreView}
-          onClose={this.onClose}
-        />
+        {
+          isShowPreView &&
+          <Preview
+            url="https://img.downfuture.com/13026877921/9y-PLogxmyJudmV23z9HgbPX.jpeg"
+            onClose={this.onClose}
+          />
+        }
       </div>
     );
   }
