@@ -6,7 +6,7 @@
 | onClick | 点击按钮时的回调 | func | (event) => void |
 | disabled | 按钮失效状态 | boolean | false |
 | htmlType | 设置 button 原生的 type 值 | string | 'button' |
-| type | 设置按钮类型，可选值为 primary danger或者不设 | string | ' |
+| type | 设置按钮类型，可选值为 primary danger或者不设 | string |  |
 | className | 样式设置 | string |  |
 
 ```jsx
