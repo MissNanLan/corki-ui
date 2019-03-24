@@ -140,13 +140,13 @@ class Preview extends React.Component {
     const { imgStyle, isShowRate, num } = this.state;
     const { url, onClose } = this.props;
     return (
-      <div className="preview">
-        <div className="preview-content">
-          <div className="preview-img">
+      <div className="corki-preview">
+        <div className="corki-preview-content">
+          <div className="corki-preview-img">
             <img
               draggable="false"
               alt="img"
-              className="img select-cursor"
+              className="corki-img corki-select-cursor"
               onMouseDown={this.handlerImgDown}
               src={url}
               onLoad={this.onload}
@@ -155,9 +155,9 @@ class Preview extends React.Component {
           </div>
           {
             isShowRate && 
-            <div className="preview-tooltip">{num}%</div>
+            <div className="corki-preview-tooltip">{num}%</div>
           }
-          <div className="preview-close" onClick={onClose}>
+          <div className="corki-preview-close" onClick={onClose}>
             <img
               alt="img"
               width="32"
@@ -166,7 +166,7 @@ class Preview extends React.Component {
             />
           </div>
         </div>
-        <div className="preview-mask" />
+        <div className="corki-preview-mask" />
       </div>
     );
   }

@@ -1,4 +1,4 @@
-.modal-wrapper {
+.corki-modal-wrapper {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -9,13 +9,13 @@
   outline: 0;
   display: flex;
 }
-.modal {
+.corki-modal {
   width: 520px;
   margin: auto;
   background: #fff;
 }
 
-.modal-title {
+.corki-modal-title {
   width: 100%;
   padding: 24px;
   border-bottom: 1px solid transparent;
@@ -25,20 +25,20 @@
   font-weight: 500;
 }
 
-.modal-content {
+.corki-modal-content {
   padding: 24px;
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
 }
 
-.modal-operator {
+.corki-modal-operator {
   width: 100%;
   height: 52px;
   border-top: 1px solid #d9d9d9;
 }
 
-.modal-operator-cancel {
+.corki-modal-operator-cancel {
   width: 50%;
   line-height: 52px;
   background: #fff;
@@ -49,11 +49,11 @@
   cursor: pointer;
 }
 
-.modal-operator-cancel:hover {
+.corki-modal-operator-cancel:hover {
   color: #1890ff;
 }
 
-.modal-operator-confirm {
+.corki-modal-operator-confirm {
   width: 50%;
   line-height: 52px;
   border-color: #1890ff;
@@ -66,12 +66,12 @@
   cursor: pointer;
 }
 
-.modal-operator-cancel:active, .modal-operator-confirm:active {
+.corki-modal-operator-cancel:active, .corki-modal-operator-confirm:active {
   opacity: .6;
   transition: opacity .3s;
 }
 
-.mask {
+.corki-mask {
   position: fixed;
   top: 0;
   left: 0;

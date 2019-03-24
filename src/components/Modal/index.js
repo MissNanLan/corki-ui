@@ -9,17 +9,17 @@ const Modal = (props) => {
       {
         visible &&
         <div>
-          <div className="modal-wrapper">
-            <div className="modal">
-              <div className="modal-title">{title}</div>
-              <div className="modal-content">{children}</div>
-              <div className="modal-operator">
-                <button className="modal-operator-cancel" onClick={cancel}>{cancelText}</button>
-                <button className="modal-operator-confirm" onClick={confirm}>{confirmText}</button>
+          <div className="corki-modal-wrapper">
+            <div className="corki-modal">
+              <div className="corki-modal-title">{title}</div>
+              <div className="corki-modal-content">{children}</div>
+              <div className="corki-modal-operator">
+                <button className="corki-modal-operator-cancel" onClick={cancel}>{cancelText}</button>
+                <button className="corki-modal-operator-confirm" onClick={confirm}>{confirmText}</button>
               </div>
             </div>
           </div>
-          <div className="mask"></div>
+          <div className="corki-mask"></div>
         </div>
       }
     </div>

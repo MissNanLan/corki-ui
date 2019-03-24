@@ -82,7 +82,7 @@ class VerificationCode extends React.Component {
     const { id } = this.state;
     const { height, width } = this.props;
     return (
-      <div className="code-wapper" onClick={this.updateCode}>
+      <div className="corki-code-wapper" onClick={this.updateCode}>
         <canvas id={id} width={width || '192'} height={height || '40'} />
       </div>
     );

@@ -1,8 +1,8 @@
-.preview {
+.corki-preview {
     height: 100%;
 }
 
-.preview-content {
+.corki-preview-content {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -14,14 +14,14 @@
     position: fixed;
 }
 
-.preview-img {
+.corki-preview-img {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.preview-tooltip {
+.corki-preview-tooltip {
     background-color: rgba(0,0,0,.8);
     border-radius: 10px;
     color: #fff;
@@ -38,12 +38,12 @@
     z-index: 1001;
 }
 
-.select-cursor {
+.corki-select-cursor {
     cursor: move;
     cursor: grab;
 }
 
-.preview-close {
+.corki-preview-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -51,7 +51,7 @@
     cursor: pointer;
 }
 
-.preview-mask {
+.corki-preview-mask {
     position: fixed;
     top: 0;
     left: 0;
