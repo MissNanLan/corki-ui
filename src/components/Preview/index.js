@@ -97,12 +97,12 @@ class Preview extends React.Component {
   // 图片按下事件
   handlerImgDown = (e) => {
     e.preventDefault();
-    const previewImg = document.getElementsByClassName('img');
+    const corkiImg = document.getElementsByClassName('corki-img');
     this.isDown = true;
     this.currentX = e.clientX;
     this.currentY = e.clientY;
-    this.offsetLeft = parseInt(previewImg[0].offsetLeft);
-    this.offsetTop = parseInt(previewImg[0].offsetTop);
+    this.offsetLeft = parseInt(corkiImg[0].offsetLeft);
+    this.offsetTop = parseInt(corkiImg[0].offsetTop);
     this.handlerImgMove();
     // 移除事件
     document.onmouseup = () => {
