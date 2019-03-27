@@ -10,7 +10,7 @@ class Button extends Component {
 
     render() {
         const { onClick, disabled = false, children, htmlType = 'button', type, className } = this.props;
-        var btnClass = classNames(className, {
+        const btnClass = classNames(className, {
             'corki-btn': true,
             'corki-btn-default': !type,
             'corki-btn-primary': type == 'primary' && !disabled,
