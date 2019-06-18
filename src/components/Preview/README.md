@@ -37,7 +37,7 @@ class Index extends Component {
         {
           isShowPreView &&
           <Preview
-            url="https://img.downfuture.com/13026877921/9y-PLogxmyJudmV23z9HgbPX.jpeg"
+            url="https://sight-world.oss-cn-hangzhou.aliyuncs.com/13026877921/9y-PLogxmyJudmV23z9HgbPX.jpeg"
             onClose={this.onClose}
           />
         }
