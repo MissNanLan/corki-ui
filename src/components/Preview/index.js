@@ -162,7 +162,7 @@ class Preview extends React.Component {
               alt="img"
               width="32"
               height="32"
-              src="https://img.downfuture.com/corki-ui/close.png"
+              src="https://sight-world.oss-cn-hangzhou.aliyuncs.com/corki-ui/close.png"
             />
           </div>
         </div>
