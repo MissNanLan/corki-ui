@@ -3,7 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production', 
-  
+  devtool: 'hidden-source-map',
   entry: {
     index: './src/index.js',
   },
