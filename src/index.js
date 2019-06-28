@@ -9,3 +9,5 @@ export { default as Button } from './components/Button/index.js';
 export { default as Input } from './components/Input/index.js';
 
 export { default as Progress } from './components/Progress/index.js';
+
+export { default as Switch } from './components/Switch/index.js';
