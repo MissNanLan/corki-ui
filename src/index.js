@@ -11,3 +11,5 @@ export { default as Input } from './components/Input/index.js';
 export { default as Progress } from './components/Progress/index.js';
 
 export { default as Switch } from './components/Switch/index.js';
+
+export { default as Radio } from './components/Radio/index.js';

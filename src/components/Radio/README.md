@@ -1,14 +1,14 @@
-Progress 进度条
+Radio 单选框
 
 ## API
 | 成员 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| strokeColor | 进度条颜色 | String | 'red' |
-| percent | 进度条百分比 | number | 0 |
+| checked | 指定当前是否选中 | boolean | false |
+| onChange | 变化时回调函数 | func | |
 
 ```jsx
 import React,{ Component } from 'react';
-import { Progress } from 'corki-ui';
+import { Radio } from 'corki-ui';
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +18,9 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <Progress strokeColor="blue" percent={10}  />
+        <Radio>
+            radio
+        </Radio>
       </div>
     );
   }
