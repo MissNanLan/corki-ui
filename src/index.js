@@ -13,3 +13,5 @@ export { default as Progress } from './components/Progress/index.js';
 export { default as Switch } from './components/Switch/index.js';
 
 export { default as Radio } from './components/Radio/index.js';
+
+export { default as message } from './components/Message/index.js';
