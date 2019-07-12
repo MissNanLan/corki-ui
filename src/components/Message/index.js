@@ -1,18 +1,15 @@
 import React,{ Component } from 'react';
 import './index.css';
 
-class Message extends Component {
+class Message {
     constructor() {
-    }
-
-    componentDidMount() {
         const div = document.createElement('div');
         const body = document.body;
         div.className = 'corki-message';
         body.appendChild(div);
     }
 
-    open(children, duration) {
+    notice(children, duration) {
         const message = document.querySelector('.corki-message');
         let notice = document.createElement('div');
         notice.className = 'corki-message-notice';
@@ -30,11 +27,9 @@ class Message extends Component {
 
         if(duration > 0) {
             setTimeout(() => {
-                const notice = document.querySelectorAll('.corki-message-notice');
+                const notice = document.querySelectorAll('.corki-message-notice')[0];
                 if(notice) {
-                    for(let i = 0; i < notice.length; i++) {
-                        document.querySelector('.corki-message').removeChild(notice[i]);
-                    }
+                    notice.remove();
                 }
             }, duration * 1000);
         }
@@ -44,10 +39,17 @@ class Message extends Component {
         const notice = document.querySelectorAll('.corki-message-notice');
         if(notice) {
             for(let i = 0; i < notice.length; i++) {
-                document.querySelector('.corki-message').removeChild(notice[i]);
+                notice[i].remove();
             }
         }
     }
 }
 
-module.exports = Message;
+const message = new Message();
+
+const api = {
+    open: message.notice,
+    destroy: message.destroy
+}
+
+module.exports = api;
