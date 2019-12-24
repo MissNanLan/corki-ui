@@ -11,6 +11,7 @@
     z-index: 10000;
     overflow: hidden;
     outline: 0;
+    user-select: none;
 }
 
 .corki-preview-img {

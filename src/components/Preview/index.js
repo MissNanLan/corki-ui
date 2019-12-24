@@ -54,6 +54,7 @@ class Preview extends React.Component {
         let wheelDelta;
         let wheelDeltaNumber;
         let rate;
+        debugger;
         // firefox and safari 的滚动轴值不一样，其余的都是1200
         if (USER_AGENT.indexOf('Firefox') > -1) {
             // wheelDelta = 3 or -3
