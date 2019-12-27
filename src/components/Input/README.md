@@ -11,22 +11,7 @@ Input 输入框 基础使用
 | onChange | 输入框内容变化时的回调 | function(e) |  |
 
 ```jsx
-import React,{ Component } from 'react';
 import { Input } from 'corki-ui';
-class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
 
-    render() {
-        return (
-            <Input
-                placeholder="Basics Input"
-            />
-        );
-    }
-}
-
-export default Index;
+ReactDOM.render(<Input placeholder="Basic usage" />, mountNode);
 ```

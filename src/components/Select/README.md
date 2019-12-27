@@ -8,11 +8,22 @@ Switch 开关
 | className | Switch 器类名 | string | |
 
 ```jsx
+import React,{ Component } from 'react';
 import { Switch } from 'corki-ui';
+class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
 
-function onChange(checked) {
-  console.log(`switch to ${checked}`);
+  render() {
+    return (
+      <div>
+        <Switch />
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<Switch onChange={onChange} />, mountNode);
+export default Index;
 ```

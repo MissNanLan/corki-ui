@@ -8,26 +8,26 @@
 | width | 宽度 | string | '192' |
 
 ```jsx
-import React,{ Component } from 'react';
 import { VerificationCode } from 'corki-ui';
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
 
-  getNumbers = (num) => {
-    console.log(num);
-  }
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
 
-  render() {
-    return (
-      <div>
-        <VerificationCode getNumbers={this.getNumbers} />
-      </div>
-    );
-  }
+    getNumbers = (num) => {
+        console.log(num);
+    }
+
+    render() {
+        return (
+            <div>
+                <VerificationCode getNumbers={this.getNumbers} />
+            </div>
+        );
+    }
 }
 
-export default Index;
+ReactDOM.render(<App />, mountNode);
 ```

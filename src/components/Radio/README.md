@@ -7,24 +7,7 @@ Radio 单选框
 | onChange | 变化时回调函数 | func | |
 
 ```jsx
-import React,{ Component } from 'react';
 import { Radio } from 'corki-ui';
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
 
-  render() {
-    return (
-      <div>
-        <Radio>
-            radio
-        </Radio>
-      </div>
-    );
-  }
-}
-
-export default Index;
+ReactDOM.render(<Radio>Radio</Radio>, mountNode);
 ```

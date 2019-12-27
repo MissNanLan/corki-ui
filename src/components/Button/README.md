@@ -10,31 +10,15 @@ Button 按钮，支持不同颜色展示
 | className | 样式设置 | string |  |
 
 ```jsx
-import React,{ Component } from 'react';
 import { Button } from 'corki-ui';
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
 
-  onClick = (e) => {
-    console.log(e);
-  }
-
-  render() {
-    return (
-      <div>
-        <Button
-            onClick={this.onClick}
-            className="btn"
-        >
-            default
-        </Button>
-      </div>
-    );
-  }
-}
-
-export default Index;
+ReactDOM.render(
+    <div>
+        <Button>Default</Button>
+        <Button type="primary">Primary</Button>
+        <Button disabled>Disabled</Button>
+        <Button type="danger">Danger</Button>
+    </div>,
+    mountNode,
+);
 ```

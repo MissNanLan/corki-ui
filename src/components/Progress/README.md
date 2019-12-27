@@ -7,22 +7,12 @@ Progress 进度条
 | percent | 进度条百分比 | number | 0 |
 
 ```jsx
-import React,{ Component } from 'react';
 import { Progress } from 'corki-ui';
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
 
-  render() {
-    return (
-      <div>
-        <Progress strokeColor="blue" percent={10}  />
-      </div>
-    );
-  }
-}
-
-export default Index;
+ReactDOM.render(
+    <div>
+        <Progress strokeColor="red" percent={10} />
+    </div>,
+    mountNode,
+);
 ```

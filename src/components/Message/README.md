@@ -7,27 +7,16 @@ Message 全局展示操作反馈信息
 | destroy | 清除所有消息通知 | Function |  |
 
 ```jsx
-import React,{ Component } from 'react';
-import { message } from 'corki-ui';
-class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+import { message, Button } from 'corki-ui';
 
-  showMessage = () => {
+const messageShow = () => {
     message.open('hello', 3);
-  }
-
-  render() {
-    const { visible } = this.state;
-    return (
-      <div>
-        <button onClick={this.showMessage}>Display normal Message</button>
-      </div>
-    );
-  }
 }
 
-export default Index;
+ReactDOM.render(
+    <Button type="primary" onClick={this.messageShow}>
+        Display normal message
+    </Button>,
+    mountNode,
+);
 ```
