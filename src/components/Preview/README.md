@@ -39,7 +39,7 @@ class App extends React.Component {
                 {
                     isShowPreView &&
                     <Preview
-                        url="//sight-world.oss-cn-hangzhou.aliyuncs.com/13026877921/9y-PLogxmyJudmV23z9HgbPX.jpeg"
+                        url="//sight-world.oss-cn-hangzhou.aliyuncs.com/corki-ui/corki-ui-logo.jpeg"
                         onClose={this.onClose}
                     />
                 }
