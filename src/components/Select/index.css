@@ -1,7 +1,7 @@
 .corki-select {
     cursor: pointer;
     position: relative;
-    display: flex;
+    display: inline-flex;
     height: 32px;
     align-items: center;
     box-sizing: border-box;
