@@ -28,6 +28,11 @@
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
+.corki-select-disabled {
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
+}
+
 .corki-select-arrow {
     margin-top: 4px;
     margin-right: 11px;
@@ -46,6 +51,7 @@
 }
 
 .corki-select-dropdown {
+    display: none;
     user-select: none;
     margin: 0;
     padding: 0;
@@ -61,8 +67,38 @@
     background-color: #fff;
     border-radius: 4px;
     outline: none;
-    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.corki-select-show {
+    display: block;
+    animation-name: selectDropDownZoomIn;
+    animation-duration: 0.3s;
+}
+
+@keyframes selectDropDownZoomIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes selectDropDownZoomOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.corki-select-remove {
+    animation-name: selectDropDownZoomOut;
+    animation-duration: 0.3s;
 }
 
 .corki-select-dropdown-menu {
@@ -95,6 +131,11 @@
     color: rgba(0, 0, 0, 0.65);
     font-weight: 600;
     background-color: #fafafa;
+}
+
+.corki-select-dropdown-menu-item-disabled {
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
 }
 
 .corki-select-dropdown-menu-item:hover:not(.corki-select-dropdown-menu-item-disabled) {

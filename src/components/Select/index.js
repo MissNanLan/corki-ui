@@ -6,44 +6,73 @@ class Select extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            onSwitch: this.props.checked || true,
-            isShowDropDown: false,
-            value: ''
+            isShow: false,
+            isShowDropDown: false
         };
     }
 
     componentDidMount() {
-        document.body.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
             if(document.querySelector('.corki-select').className.includes('corki-select-open')) {
                 this.setState({
                     isShowDropDown: false
-                }); 
-            }
-        });
-        document.querySelector('.corki-select').addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.setState({
-                isShowDropDown: !this.state.isShowDropDown
-            });
-            const offsetHeight = document.querySelector('.corki-select').offsetHeight;
-            const offsetWidth = document.querySelector('.corki-select').offsetWidth;
-            if(document.querySelector('.corki-select-dropdown')) document.querySelector('.corki-select-dropdown').setAttribute('style', `top: ${offsetHeight + 2}px; width: ${offsetWidth}px`);
-            if(document.querySelector('.corki-select-dropdown-menu')) {
-                document.querySelector('.corki-select-dropdown-menu').addEventListener('click', (e) => {
-                    this.setState({
-                        selectVal: e.target.innerHTML
-                    });
                 });
             }
         });
     }
- 
+
+    handleClick = (e) => {
+        if(this.props.disabled) return;
+        e.nativeEvent.stopImmediatePropagation();
+        e.stopPropagation();
+        this.setState({
+            isShowDropDown: !this.state.isShowDropDown
+        });
+
+        let offsetHeight = '';
+        let offsetWidth = '';
+        if(e.target.getAttribute('class').includes('corki-select-selection')) {
+            offsetHeight = e.target.parentElement.offsetHeight;
+            offsetWidth = e.target.parentElement.offsetWidth;
+        }
+
+        if(e.target.nodeName == 'svg') {
+            offsetHeight = e.target.parentElement.parentElement.parentElement.offsetHeight;
+            offsetWidth = e.target.parentElement.parentElement.parentElement.offsetWidth;
+        }
+
+        if(!offsetHeight && !offsetWidth) {
+            offsetHeight = e.target.offsetHeight;
+            offsetWidth = e.target.offsetWidth;
+        }
+        if(document.querySelector('.corki-select-dropdown')) document.querySelector('.corki-select-dropdown').setAttribute('style', `top: ${offsetHeight + 2}px; width: ${offsetWidth}px`);
+        if(document.querySelector('.corki-select-dropdown-menu')) {
+            document.querySelector('.corki-select-dropdown-menu').addEventListener('click', (e) => {
+                if(e.target.getAttribute('data-disabled') == 'true') return;
+                this.props.onChange(e);
+            });
+        }
+    }
+
     render() {
-        const { isShowDropDown, value } = this.state;
+        const { defaultValue, handleChange, value, children, disabled } = this.props;
+        const { isShowDropDown } = this.state;
+        const className = classNames({
+            'corki-select': true,
+            'corki-select-open': isShowDropDown,
+            'corki-select-disabled': disabled
+        });
         return (
-            <div className={isShowDropDown ? "corki-select corki-select-open" : "corki-select"} style={{ width: '120px' }}>
+            <div
+                disabled={disabled}
+                className={className}
+                style={this.props.style}
+                onClick={(e) => this.handleClick(e)}
+            >
                 <div className="corki-select-selection">
-                    {value}
+                    {
+                        value ? value : defaultValue
+                    }
                 </div>
                 <span className="corki-select-arrow">
                     <i className={isShowDropDown ? "corki-select-arrow-icon" : "corki-select-arrow-down-icon"} aria-label="图标: down">
@@ -62,21 +91,35 @@ class Select extends Component {
                     </i>
                 </span>
                 {
-                    isShowDropDown &&
-                    <div className="corki-select-dropdown">
-                        <ul className="corki-select-dropdown-menu" role="listbox" tabindex="0">
-                            <li className="corki-select-dropdown-menu-item corki-select-dropdown-menu-item-selected" role="option" unselectable="on" aria-selected="false">
-                                Jack
-                            </li>
-                            <li className="corki-select-dropdown-menu-item" role="option" unselectable="on" aria-selected="true">
-                                Lucy
-                            </li>
-                            <li className="corki-select-dropdown-menu-item" role="option" unselectable="on" aria-disabled="true" aria-selected="false">
-                                Disabled
-                            </li>
-                            <li className="corki-select-dropdown-menu-item" role="option" unselectable="on" aria-selected="false">
-                                yiminghe
-                            </li>
+                    <div className={isShowDropDown ? 'corki-select-dropdown corki-select-show' : 'corki-select-dropdown corki-select-remove'}>
+                        <ul className="corki-select-dropdown-menu" role="listbox">
+                            {
+                                children && children.map((item, key) => {
+                                    const { props } = item;
+                                    let disabled = false, hasSelected = false;
+                                    if(props.disabled) disabled = true;
+
+                                    if((value || defaultValue) == props.value) hasSelected = true;
+
+                                    const liClass = classNames({
+                                        'corki-select-dropdown-menu-item': true,
+                                        'corki-select-dropdown-menu-item-selected': hasSelected,
+                                        'corki-select-dropdown-menu-item-disabled': disabled
+                                    });
+                                    return (
+                                        <li
+                                            key={key}
+                                            className={liClass}
+                                            role="option"
+                                            unselectable="on"
+                                            aria-selected="false"
+                                            data-disabled={disabled ? "true" : "false"}
+                                        >
+                                            {props.value}
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 }
