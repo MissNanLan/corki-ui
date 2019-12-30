@@ -29,6 +29,7 @@
 }
 
 .corki-select-disabled {
+    background: #f5f5f5;
     color: rgba(0, 0, 0, 0.25);
     cursor: not-allowed;
 }
