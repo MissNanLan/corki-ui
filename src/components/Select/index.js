@@ -13,7 +13,7 @@ class Select extends Component {
 
     componentDidMount() {
         document.addEventListener('click', (e) => {
-            if(document.querySelector('.corki-select').className.includes('corki-select-open')) {
+            if(document.querySelector('.corki-select') && document.querySelector('.corki-select').className.includes('corki-select-open')) {
                 this.setState({
                     isShowDropDown: false
                 });
