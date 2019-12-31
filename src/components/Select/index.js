@@ -25,6 +25,7 @@ class Select extends Component {
         if(this.props.disabled) return;
         e.nativeEvent.stopImmediatePropagation();
         e.stopPropagation();
+        if(e.target.getAttribute('data-disabled') == 'true') return;
         this.setState({
             isShowDropDown: !this.state.isShowDropDown
         });
