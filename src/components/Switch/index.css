@@ -47,6 +47,11 @@
     background-color: #1890ff;
 }
 
+.corki-switch-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 .corki-switch-checked .corki-switch-inner {
     margin-right: 24px;
     margin-left: 6px;
