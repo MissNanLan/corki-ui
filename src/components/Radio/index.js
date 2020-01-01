@@ -7,13 +7,14 @@ class Radio extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            onRadio: this.props.checked || false
+            onRadio: (typeof this.props.defaultChecked == 'boolean') ? this.props.defaultChecked : (this.props.checked || true)
         };
     }
 
     // radio 开关
     radioHandle = (e) => {
-        const { onChange, checked = 3 } = this.props;
+        const { onChange, checked = 3, disabled } = this.props;
+        if(disabled) return;
         const { onRadio } = this.state;
         if(checked != 3) {
             this.setState({
@@ -27,20 +28,26 @@ class Radio extends Component {
                 onRadio: true
             });
         }
-        if(onChange) {
-            onChange(onRadio, e);
-        }
+
+        if(onChange) onChange(onRadio, e);
     }
 
     render() {
         const { onRadio } = this.state;
-        const { checked = 3, children } = this.props;
+        const { checked = 3, children, className, defaultChecked = false, disabled = false } = this.props;
         const radioClass = classNames({
             'corki-radio': true,
-            'corki-radio-checked': checked == 3 ? onRadio : checked
+            'corki-radio-checked': checked == 3 ? onRadio : checked,
+            'corki-radio-disabled': disabled
         });
+
+        const labelClass = classNames(className, {
+            'corki-radio-wrapper': true,
+            'corki-radio-wrapper-disabled': disabled
+        });
+
         return (
-            <div className="corki-radio-wrapper">
+            <label className={labelClass}>
                 <span className={radioClass}>
                     <input className="corki-radio-input" type="radio" onClick={this.radioHandle} />
                     <span className="corki-radio-inner"></span>
@@ -48,14 +55,17 @@ class Radio extends Component {
                 <span className="corki-radio-text">
                     {children}
                 </span>
-            </div>
+            </label>
         );
     }
 }
 
 Radio.propTypes = {
+    className: PropTypes.string,
     checked: PropTypes.bool,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    defaultChecked: PropTypes.bool,
+    disabled: PropTypes.bool
 };
 
 module.exports = Radio;
