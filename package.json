@@ -11,15 +11,21 @@
     "url": "git+https://github.com/xuya227939/corki-ui.git"
   },
   "keywords": [
-    "react"
+    "react",
+    "corki-ui",
+    "component",
+    "components",
+    "frontend",
+    "react-component",
+    "ui"
   ],
   "readmeFilename": "README.md",
   "author": "xuya227939",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/xuya227939/corki-ui/issues"
   },
-  "homepage": "https://github.com/xuya227939/corki-ui#readme",
+  "homepage": "https://www.downfuture.com/#/",
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
