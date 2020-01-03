@@ -10,7 +10,7 @@
 
 一套个人自娱自乐 UI 库。
 
-[![CircleCI branch](https://img.shields.io/badge/build-passing-brightgreen)] [![NPM](https://img.shields.io/badge/npm-1.9.2-blue)]()
+![NPM](https://img.shields.io/badge/npm-1.9.2-blue)
 
 </div>
 
