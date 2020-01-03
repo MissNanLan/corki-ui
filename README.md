@@ -12,6 +12,8 @@
 
 [![CircleCI branch](https://img.shields.io/badge/build-passing-brightgreen)](https://circleci.com/gh/xuya227939/corki-ui-web) [![NPM Version](https://img.shields.io/badge/npm-1.9.2-blue)](https://www.npmjs.com/package/corki-ui)
 
+[![CircleCI branch](https://img.shields.io/badge/build-passing-brightgreen)](https://circleci.com/gh/xuya227939/corki-ui-web) [![NPM Version](https://img.shields.io/badge/npm-1.9.2-blue)](https://www.npmjs.com/package/corki-ui)
+
 </div>
 
 ## ✨ 特性
