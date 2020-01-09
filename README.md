@@ -54,7 +54,7 @@ const App = () => (
 ## ⌨️ 本地开发
 
 ```bash
-$ git clone https://github.com/xuya227939/corki-ui-web.git
+$ git clone https://github.com/Cherry-Team/corki-ui-web.git
 $ cd corki-ui-web
 $ npm install
 $ npm start
