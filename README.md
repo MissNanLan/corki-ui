@@ -49,7 +49,7 @@ const App = () => (
 
 ## 🔗 链接
 
-- [首页](https://downfuture.com)
+- [首页](https://corki-ui.com)
 
 ## ⌨️ 本地开发
 
