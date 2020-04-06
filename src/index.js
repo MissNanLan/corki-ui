@@ -19,3 +19,5 @@ export { default as message } from './components/Message/index.js';
 export { default as Select } from './components/Select/index.js';
 
 export { default as Checkbox } from './components/Checkbox/index.js';
+
+export { default as Affix } from './components/Affix/index.js';
